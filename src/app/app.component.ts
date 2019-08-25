@@ -1,14 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
 
 import { DataLink, DataNode, GraphData } from './dto/dto';
 import { RxifyWorker } from './worker-utils/rxify-worker';
+import { Subscription } from 'rxjs';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   title = 'rxify-worker-angular';
 
   @ViewChild('graph', { read: ElementRef, static: true })
@@ -25,6 +27,8 @@ export class AppComponent implements OnInit {
 
   progressValue = 0;
 
+  subscription: Subscription;
+
 
   ngOnInit() {
     this.prepareData();
@@ -33,7 +37,7 @@ export class AppComponent implements OnInit {
 
   private calculateLayout(grpahData: GraphData) {
     const rxify = new RxifyWorker(new Worker('./app.worker', { type: 'module' }));
-    rxify.sendMessage(this.graphData).subscribe((result: GraphData) => {
+    this.subscription = rxify.sendMessage(this.graphData).subscribe((result: GraphData) => {
       this.progressValue = result.progress;
       if (result.progress === 100) {
         this.drawGraph(result);
@@ -83,6 +87,12 @@ export class AppComponent implements OnInit {
 
     context.restore();
 
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 
 }
