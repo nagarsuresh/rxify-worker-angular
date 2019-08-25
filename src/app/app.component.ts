@@ -1,7 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { json } from 'd3-fetch';
-import { forceSimulation, forceLink, forceX, forceY, forceManyBody, SimulationLinkDatum, forceCenter, forceCollide } from 'd3-force';
-import { hierarchy } from 'd3-hierarchy';
+
 import { DataLink, DataNode, GraphData } from './dto/dto';
 import { RxifyWorker } from './worker-utils/rxify-worker';
 
@@ -44,9 +42,9 @@ export class AppComponent implements OnInit {
   }
 
   private prepareData() {
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 3000; i++) {
       this.graphData.nodes.push({ id: i, r: 3 });
-      const from = Math.round(Math.sqrt(i));
+      const from = Math.round(Math.cbrt(i));
       const to = i;
       this.graphData.links.push({
         source: this.graphData.nodes[from],
@@ -62,7 +60,7 @@ export class AppComponent implements OnInit {
     context.clearRect(0, 0, this.width, this.height);
     context.save();
     context.translate(this.width / 2, this.height / 2);
-    context.scale(0.5, 0.5);
+    context.scale(0.4, 0.4);
     context.beginPath();
     graphData.nodes.forEach((d: DataNode) => {
       context.moveTo(d.x + d.r, d.y);

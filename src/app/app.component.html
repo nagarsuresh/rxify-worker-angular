@@ -1,8 +1,7 @@
-<!-- <canvas class="graph" #graph [attr.width]="width" [attr.height]="height" [ngStyle]="{'width.px': width, 'height.px': height}"> -->
-<progress max="100" [attr.value]="progressValue"></progress>
 <canvas class="graph" #graph width="1200" height="1200">
 </canvas>
 
 <div *ngIf="progressValue !== 100" class="progress-label">
+  <progress max="100" [attr.value]="progressValue"></progress>
   {{progressValue}}%
 </div>

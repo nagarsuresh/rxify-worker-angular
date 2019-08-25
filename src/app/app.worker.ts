@@ -14,7 +14,7 @@ register.handleMessages((graphData: GraphData) => {
       .force('charge', forceManyBody().strength(-40))
       .force('x', forceX())
       .force('y', forceY())
-      .force('collide', forceCollide().radius((d: DataNode) => d.r));
+      .force('collide', forceCollide().radius((d: DataNode) => d.r + 3));
     // .force('center', forceCenter(500, 400));
 
     const count = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay()));
