@@ -5,9 +5,15 @@ import { DataNode, GraphData } from './dto/dto';
 import { RegisterWorker } from './worker-utils/register-worker';
 
 const register = new RegisterWorker();
-register.handleMessages((graphData: GraphData) => {
-  const subject = new Subject();
 
+register.handleMessages((graphData: GraphData) => {
+  const subject = new Subject<GraphData>();
+  calculateLayout(subject, graphData);
+  return subject.asObservable();
+});
+
+
+function calculateLayout(subject: Subject<GraphData>, graphData: GraphData) {
   setTimeout(() => {
     const simulation = forceSimulation(graphData.nodes)
       .force('link', forceLink(graphData.links).id((d: DataNode) => d.id.toString()).distance(0).strength(1))
@@ -15,13 +21,10 @@ register.handleMessages((graphData: GraphData) => {
       .force('x', forceX())
       .force('y', forceY())
       .force('collide', forceCollide().radius((d: DataNode) => d.r + 3));
-    // .force('center', forceCenter(500, 400));
 
     const count = Math.ceil(Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay()));
     for (let i = 0, n = count; i < n; ++i) {
-      // if (i % 10 === 0) {
       subject.next({ nodes: [], links: [], progress: Math.round((i / n) * 100) });
-      // }
       simulation.tick();
     }
 
@@ -30,10 +33,6 @@ register.handleMessages((graphData: GraphData) => {
 
     console.log(graphData);
     subject.complete();
-
   });
-
-
-  return subject.asObservable();
-});
+}
 
