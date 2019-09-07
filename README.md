@@ -1,3 +1,4 @@
+[![Known Vulnerabilities](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular/badge.svg?targetFile=package.json)](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular?targetFile=package.json)
 # RxifyWorkerAngular
 
 Using RxJS to communicate with webworker in angular application.
@@ -33,4 +34,3 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Demo
 ![Consumer](/src/assets/force-layout.gif)
-
