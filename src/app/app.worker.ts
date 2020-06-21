@@ -2,7 +2,7 @@ import { forceCollide, forceLink, forceManyBody, forceSimulation, forceX, forceY
 import { Subject } from 'rxjs';
 
 import { DataNode, GraphData } from './dto/dto';
-import { RegisterWorker } from './worker-utils/register-worker';
+import { RegisterWorker } from 'rxjs-web-worker';
 
 const register = new RegisterWorker();
 

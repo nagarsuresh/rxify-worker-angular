@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "rxjs-web-worker": [
+        "dist/rxjs-web-worker"
+      ],
+      "rxjs-web-worker/*": [
+        "dist/rxjs-web-worker/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

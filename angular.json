@@ -128,6 +128,41 @@
           }
         }
       }
+    },
+    "rxjs-web-worker": {
+      "projectType": "library",
+      "root": "projects/rxjs-web-worker",
+      "sourceRoot": "projects/rxjs-web-worker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/rxjs-web-worker/tsconfig.lib.json",
+            "project": "projects/rxjs-web-worker/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rxjs-web-worker/src/test.ts",
+            "tsConfig": "projects/rxjs-web-worker/tsconfig.spec.json",
+            "karmaConfig": "projects/rxjs-web-worker/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/rxjs-web-worker/tsconfig.lib.json",
+              "projects/rxjs-web-worker/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "rxify-worker-angular"
 }

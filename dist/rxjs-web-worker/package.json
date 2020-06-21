@@ -1,0 +1,20 @@
+{
+  "name": "rxify-webworker",
+  "version": "0.0.1-beta.0",
+  "peerDependencies": {
+    "rxjs": "~6.4.0"
+  },
+  "main": "bundles/rxify-webworker.umd.js",
+  "module": "fesm5/rxify-webworker.js",
+  "es2015": "fesm2015/rxify-webworker.js",
+  "esm5": "esm5/rxify-webworker.js",
+  "esm2015": "esm2015/rxify-webworker.js",
+  "fesm5": "fesm5/rxify-webworker.js",
+  "fesm2015": "fesm2015/rxify-webworker.js",
+  "typings": "rxify-webworker.d.ts",
+  "metadata": "rxify-webworker.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

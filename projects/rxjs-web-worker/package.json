@@ -1,0 +1,12 @@
+{
+  "name": "rxify-webworker",
+  "version": "0.0.1-beta.0",
+  "peerDependencies": {
+    "rxjs": "~6.4.0"
+  },
+  "keywords": [
+    "rxjs",
+    "webworker",
+    "rxify"
+  ]
+}

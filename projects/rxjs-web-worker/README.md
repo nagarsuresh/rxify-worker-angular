@@ -1,7 +1,7 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular/badge.svg?targetFile=package.json)](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular?targetFile=package.json)
-# RxifyWorkerAngular
+# rxjs-web-worker
 
-Using RxJS to communicate with webworker in angular application.
+Using RxJS to communicate with webworker.
 
 ### Consumer Code
  ```
@@ -26,14 +26,6 @@ Using RxJS to communicate with webworker in angular application.
 ```
 
 
-## Development server
+## Repo
+https://github.com/nagarsuresh/rxify-worker-angular
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Demo
-![Consumer](/src/assets/force-layout.gif)

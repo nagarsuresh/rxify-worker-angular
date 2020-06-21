@@ -1,10 +1,6 @@
 import { Subject } from 'rxjs';
+import { WorkerMessage } from './dto';
 
-export interface WorkerMessage {
-  __messageId: string;
-  __messageType?: 'DATA' | 'COMPLETE';
-  userData: any;
-}
 
 /**
  * To Rxify a worker thread and make the web worker enjoyable.

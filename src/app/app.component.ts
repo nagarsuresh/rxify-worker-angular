@@ -1,9 +1,8 @@
-import { Component, ElementRef, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { RxifyWorker } from 'rxjs-web-worker';
 
 import { DataLink, DataNode, GraphData } from './dto/dto';
-import { RxifyWorker } from './worker-utils/rxify-worker';
-import { Subscription } from 'rxjs';
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',

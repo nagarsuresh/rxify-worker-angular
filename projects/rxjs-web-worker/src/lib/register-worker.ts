@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { WorkerMessage } from './rxify-worker';
+import { WorkerMessage } from './dto';
 
 export type MessageHandler = (payload: any) => Observable<any>;
 
