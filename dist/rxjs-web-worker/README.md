@@ -1,5 +1,5 @@
 [![Known Vulnerabilities](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular/badge.svg?targetFile=package.json)](https://snyk.io//test/github/nagarsuresh/rxify-worker-angular?targetFile=package.json)
-# rxjs-web-worker
+# rxify-webworker
 
 Using RxJS to communicate with webworker.
 
