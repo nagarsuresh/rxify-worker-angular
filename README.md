@@ -37,3 +37,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Demo
 ![Consumer](/src/assets/force-layout.gif)
+
+## Explanation
+https://naagarsuresh78.medium.com/rxify-webworker-communication-in-angular8-b0cddbdcf2e
+
